@@ -2,7 +2,7 @@
 
 print_r($dataCliente);
 
-$sql = sprintf("insert into permisos (id_permisos, tipos_permisos, descripcion_auditorias, accion_permitidas)  values ('%d','%s','%s','%s')",
+$sql = sprintf("insert into permisos (id_permisos, tipos_permisos, descripcion_auditorias, accion_permitida)  values ('%d','%s','%s','%s')",
 $dataCliente['_post']['id_permisos'],
 $dataCliente['_post']['tipos_permisos'],
 $dataCliente['_post']['descripcion_auditorias'],

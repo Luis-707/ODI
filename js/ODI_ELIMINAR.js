@@ -1,12 +1,12 @@
-function IngresarUsuario(){
+function Eliminar_ODI(){
 
     //Comprobar que la interfaz se carga sin problemas.
     console.log('la inferfaz de actualizar datos cargo');
 
     //url base que direciona los servicios manejados por el controlador en ODI
-    
+    //const urlBase = 'http://localhost/ODI/controlador/?';
 
-    const servicio = 'IngresarUsuario';
+    const servicio = 'Eliminar_ODI';
 
     //contactena el servicio para completar la URL
     var url = urlBase+servicio;
@@ -17,7 +17,7 @@ function IngresarUsuario(){
 
     //Se envian los datos del formulario de contrasena a la funcion para capturar datos y 
     // los almacens en la varible dataFormulario.
-    var dataFormulario = capturarValoresFormulario('form_usuarios');
+    var dataFormulario = capturarValoresFormulario('form_usuarios_odi');
 
     console.log('Datos del formulario:', dataFormulario);
 
@@ -31,24 +31,21 @@ function respuestaUsuario(respuestaServidor) {
   console.log(respuesta);
 }
 
-function listarUser(){
-  cargarVista('vistas/listaUsuario.php');
-  procesar('http://localhost/ODI/controlador/?Serv_listarUsuario','listarDeUsuario(respuestaServidor)');
-}
-
-function listarDeUsuario(respuestaServidor){
-  console.log(respuestaServidor);
-  var data = respuestaServidor[0];
-  $('#t_usuarios').DataTable( {
-    data: data,
-    columns: [
-        { data: 'usuario_idp',title: 'CODIGO'  },
-        { data: 'nombre_usuario',title: 'NOMBRE' },
-        { data: 'clave',title: 'CLAVE' },
-        { data: 'rol',title: 'ROL' }
-      ]
-  } );
-}
-
- 
+function listarODI(){
+    cargarVista('vistas/lista_odi.php');
+    procesar('http://localhost/ODI/controlador/?Serv_listar_ODI','listarODI(respuestaServidor)');
+  }
   
+  function listarODI(respuestaServidor){
+    console.log(respuestaServidor);
+    var data = respuestaServidor[0];
+    $('#t_odi').DataTable( {
+      data: data,
+      columns: [
+          { data: 'odi_id',title: 'CODIGO'  },
+          { data: 'nombre_odi',title: 'NOMBRE DE ODI' },
+          { data: 'peso',title: 'PESO' },
+          { data: 'status',title: 'STATUS' }
+        ]
+    } );
+  }

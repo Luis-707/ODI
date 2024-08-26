@@ -2,7 +2,7 @@
 
 print_r($dataCliente);
 
-$sql = sprintf("delete from competencias WHERE cd_comp = '%d'");
+$sql = sprintf("delete from competencias WHERE Comp_ID = '%d'");
 $respuesta = $this->ejecutarConsultaBdds($sql);
 return $respuesta;
 

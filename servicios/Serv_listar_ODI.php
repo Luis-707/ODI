@@ -3,7 +3,7 @@
 
 //print_r($dataCliente);
 
-$sql = sprintf("select * from usuarios");
+$sql = sprintf("select * from odi");
 $respuesta = $this->ejecutarConsultaBdds($sql);
 return $respuesta;
 

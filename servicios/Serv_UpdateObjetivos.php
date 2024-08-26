@@ -1,14 +1,13 @@
 <?php
 
-$sql = sprintf("UPDATE objetivos SET cd_obj = '%d', nombre_objetivo = '%s', area_objetivos = '%s', obj_peso = '%d', obj_rango = '%d', obj_peso_x_rango = '%d', calif_total_b = '%d'
-WHERE cd_personal = '%d'", 
-            $dataCliente['_get']['cd_obj'],
-            $dataCliente['_get']['nombre_objetivo'],
-            $dataCliente['_get']['area_objetivos '],
-            $dataCliente['_get']['obj_peso'],
-            $dataCliente['_get']['obj_rango'],
-            $dataCliente['_get']['obj_peso_x_rango'],
-            $dataCliente['_get']['calif_total_b']
+$sql = sprintf("UPDATE ODI SET ODI_ID = '%d', Nombre_ODI = '%s', Peso = '%d', Rango = '%d', Status = '%s' , PesoxRango = '%d'
+WHERE ODI_ID = '%d'", 
+            $dataCliente['_post']['ODI_ID'],
+            $dataCliente['_post']['Nombre_ODI'],
+            $dataCliente['_post']['Peso'],
+            $dataCliente['_post']['Rango'],
+            $dataCliente['_post']['Status'],
+            $dataCliente['_post']['PesoxRango']
 
             );
             $respuesta = $this->ejecutarConsultaBdds($sql);

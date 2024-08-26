@@ -1,3 +1,3 @@
 <div id="listadoUsuAio">
-    <table id = "exampleTabla" class="display" width="100%"> </table>
+    <table id = "t_usuarios" class="display" width="100%"> </table>
 </div>
