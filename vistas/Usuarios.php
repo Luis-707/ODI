@@ -28,7 +28,7 @@
                   <label for="">Clave: </label>
                   <input type="number" id="clave" class="form-control">
                   <label for="">Rol: </label>
-                  
+
                  <select class="form-select" name="rol" id="rol">
                  <option value="">Seleccione una opcion</option>
                  <option value="Admin">Administrador</option>
@@ -144,5 +144,7 @@
     
 </body>
 
-</div>
+
 </html>
+
+</div>
