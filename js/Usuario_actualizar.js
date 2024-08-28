@@ -31,24 +31,29 @@ function respuestaUsuario(respuestaServidor) {
   console.log(respuesta);
 }
 
-function listarUser(){
-  cargarVista('vistas/listaUsuario.php');
-  procesar2('http://localhost/ODI/controlador/?Serv_listarODI','listarDeUsuario(respuestaServidor)');
-}
-
 function listarDeUsuario(respuestaServidor){
   console.log(respuestaServidor);
-  var data = respuestaServidor[0];
-  $('#tUsuarios').DataTable( {
-    data: data,
+  var datos = respuestaServidor[0];
+
+  if ($.fn.dataTable.isDataTable('#t_usuarios')) {
+        // Si la tabla ya está inicializada, actualiza sus datos
+        let table = $('#t_usuarios').DataTable();
+        table.clear();
+        table.rows.add(datos);
+        table.draw();
+    } else {
+  
+  $('#t_usuarios').DataTable( {
+    data: datos,
     columns: [
-      { data: 'usuario_idp',title: 'CODIGO'  },
-      { data: 'nombre_usuario',title: 'NOMBRE' },
-      { data: 'clave',title: 'CLAVE' },
-      { data: 'rol',title: 'ROL' },
-
-
+        { data: 'usuario_idp',title: 'CODIGO'  },
+        { data: 'nombre_usuario',title: 'NOMBRE' },
+        { data: 'clave',title: 'CLAVE' },
+        { data: 'rol',title: 'ROL' }
       ]
-  } );
+  });
+
+    }
+
 }
 

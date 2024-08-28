@@ -38,16 +38,28 @@ function listarUser(){
 
 function listarDeUsuario(respuestaServidor){
   console.log(respuestaServidor);
-  var data = respuestaServidor[0];
+  var datos = respuestaServidor[0];
+
+  if ($.fn.dataTable.isDataTable('#t_usuarios')) {
+        // Si la tabla ya está inicializada, actualiza sus datos
+        let table = $('#t_usuarios').DataTable();
+        table.clear();
+        table.rows.add(datos);
+        table.draw();
+    } else {
+  
   $('#t_usuarios').DataTable( {
-    data: data,
+    data: datos,
     columns: [
         { data: 'usuario_idp',title: 'CODIGO'  },
         { data: 'nombre_usuario',title: 'NOMBRE' },
         { data: 'clave',title: 'CLAVE' },
         { data: 'rol',title: 'ROL' }
       ]
-  } );
+  });
+
+    }
+
 }
 
  

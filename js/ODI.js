@@ -39,7 +39,7 @@ function listarODI(){
 
 function listarODI(respuestaServidor){
   console.log(respuestaServidor);
-  var data = respuestaServidor[0];
+  var datos = respuestaServidor[0];
 
   if ($.fn.dataTable.isDataTable('#t_odi')) {
     // Si la tabla ya está inicializada, actualiza sus datos
@@ -58,7 +58,7 @@ function listarODI(respuestaServidor){
         { data: 'nombre_odi',title: 'NOMBRE DE ODI' },
         { data: 'peso',title: 'PESO' },
         { data: 'status',title: 'STATUS' }
-      ]
+      ],
   });
 
 }

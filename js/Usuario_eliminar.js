@@ -33,19 +33,20 @@ function respuestaUsuario(respuestaServidor) {
 
 function listarUser(){
   cargarVista('vistas/listaUsuario.php');
-  procesar2('http://localhost/ODI/controlador/?Serv_listarUsuario','listarDeUsuario(respuestaServidor)');
+  procesar('http://localhost/ODI/controlador/?Serv_listarUsuario','listarDeUsuario(respuestaServidor)');
 }
 
 function listarDeUsuario(respuestaServidor){
   console.log(respuestaServidor);
-  var data = respuestaServidor[0];
+  var datos = respuestaServidor[0];
+  
   $('#t_usuarios').DataTable( {
-    data: data,
+    data: datos,
     columns: [
-      { data: 'usuario_idp',title: 'CODIGO'  },
-      { data: 'nombre_usuario',title: 'NOMBRE' },
-      { data: 'clave',title: 'CLAVE' },
-      { data: 'rol',title: 'ROL' }
+        { data: 'usuario_idp',title: 'CODIGO'  },
+        { data: 'nombre_usuario',title: 'NOMBRE' },
+        { data: 'clave',title: 'CLAVE' },
+        { data: 'rol',title: 'ROL' }
       ]
   } );
 }
