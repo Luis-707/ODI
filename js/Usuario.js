@@ -33,7 +33,7 @@ function respuestaUsuario(respuestaServidor) {
 
 function listarUser(){
   cargarVista('vistas/listaUsuario.php');
-  procesar('http://localhost/ODI/controlador/?Serv_listarUsuario','listarDeUsuario(respuestaServidor)');
+  procesar('http://localhost/ODI/controlador/?ListarUsuario','listarDeUsuario(respuestaServidor)');
 }
 
 function listarDeUsuario(respuestaServidor){

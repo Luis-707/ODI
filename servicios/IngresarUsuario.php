@@ -17,8 +17,9 @@
  if (count($respuesta) > 0) {
     $respuesta = "usuario ya existe";
  }else{ /* si no existe lo guardo */
-    $sql = sprintf("INSERT INTO usuario (nombre_usuario, clave, rol) VALUES (%d, '%s', '%s', '%s')", 
+    $sql = sprintf("INSERT INTO usuario (usuario_idp, nombre_usuario, clave, rol) VALUES ('%d', '%s', '%s', '%s')", 
    
+    $dataCliente['_post']['usuario_idp'],
     $dataCliente['_post']['nombre_usuario'],
     $dataCliente['_post']['clave'],
     $dataCliente['_post']['rol']);
