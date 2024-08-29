@@ -15,6 +15,12 @@
                     <li class="sidebar-item"><a onclick="cargarVista('vistas/ODI.php')" class="sidebar-link">
                     <span class="hide-menu">ODI</span></a></li>
 
+                    <li class="sidebar-item"><a onclick="cargarVista('vistas/Factores.php')" class="sidebar-link">
+                    <i class="mdi mdi-account-plus"></i><span class="hide-menu"> Factores </span></a></li>
+
+                    <li class="sidebar-item"><a onclick="cargarVista('vistas/Aspectos.php')" class="sidebar-link">
+                    <i class="mdi mdi-account-plus"></i><span class="hide-menu"> Aspectos </span></a></li>
+
                 <li class="sidebar-item"><a  class="sidebar-link"><i
                             class="mdi mdi-animation"></i><span class="hide-menu"> Privilegios de usuario
                         </span></a></li>
